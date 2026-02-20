@@ -8,17 +8,17 @@ class CycleEngine:
         self.cp_gas = 1.15   # kJ/kgK (exhaust gas)
         self.gamma_gas = 1.33
 
-    def analyze_ad_htc_system(self, gt_temp_c, comp_ratio, htc_press_bar, biomass_flow_kgs):
-        """
+"""
         Integrated AD-HTC Gas Cycle Analysis
-        """
-        # 1. Anaerobic Digestion (AD)
-        # Assume 0.3 kg biogas per kg biomass
-        biogas_flow = biomass_flow_kgs * 0.3
+    """
+    def analyze_ad_htc_system(self, gt_temp_c, comp_ratio, htc_press_bar, biomass_flow_kgs):
+        
+        # Anaerobic Digestion (AD)
+        biogas_flow = biomass_flow_kgs * 0.3 # Assume 0.3 kg biogas per kg biomass
         lcv_biogas = 22000  # kJ/kg (approx 60% CH4)
         heat_input = biogas_flow * lcv_biogas  # kW
 
-        # 2. Gas Turbine Cycle (Brayton)
+        # Gas Turbine Cycle (Brayton)
         t1 = 288.15  # 15°C
         # Compression
         t2s = t1 * (comp_ratio ** ((self.gamma_air - 1) / self.gamma_air))

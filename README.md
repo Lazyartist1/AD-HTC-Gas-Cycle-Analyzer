@@ -11,7 +11,7 @@ Features
   - $T-\dot{H}$ (Temperature-Heat Rate) diagram for gas processes.
 - Real-time Parametric Analysis: Modify temperatures, pressures, and flow rates to see immediate impacts.
 
-## Installation
+* Installation
 
 1. Install dependencies:
    ```bash
@@ -25,7 +25,7 @@ Features
 
 3. Open `index.html` in your browser to view the dashboard.
 
-## Architecture
+* structure
 - `cycle_engine.py`: Core thermodynamic logic.
 - `main.py`: FastAPI server and request routing.
 - `index.html`, `styles.css`, `script.js`: Frontend implementation.
