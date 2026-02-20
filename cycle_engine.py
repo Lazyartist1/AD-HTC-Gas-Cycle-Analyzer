@@ -8,10 +8,10 @@ class CycleEngine:
         self.cp_gas = 1.15   # kJ/kgK (exhaust gas)
         self.gamma_gas = 1.33
 
-"""
-        Integrated AD-HTC Gas Cycle Analysis
-    """
     def analyze_ad_htc_system(self, gt_temp_c, comp_ratio, htc_press_bar, biomass_flow_kgs):
+        """
+        Integrated AD-HTC Gas Cycle Analysis
+        """
         
         # Anaerobic Digestion (AD)
         biogas_flow = biomass_flow_kgs * 0.3 # Assume 0.3 kg biogas per kg biomass
