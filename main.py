@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from cycle_engine import CycleEngine
 
@@ -28,6 +29,8 @@ async def analyze_cycle(data: CycleInput):
         biomass_flow_kgs=data.biomass_flow
     )
     return results
+
+app.mount("/", StaticFiles(directory=".", html=True), name="static")
 
 if __name__ == "__main__":
     import uvicorn
