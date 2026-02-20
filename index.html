@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AD-HTC Fuel-Enhanced Gas Cycle Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo-container">
+                <div class="logo-icon">E</div>
+                <h2>ENERGHX</h2>
+            </div>
+            <nav class="parameters">
+                <h3>Cycle Parameters</h3>
+                <div class="input-group">
+                    <label>Gas Turbine Tech (°C)</label>
+                    <input type="number" id="gt-temp" value="1200">
+                </div>
+                <div class="input-group">
+                    <label>Compression Ratio</label>
+                    <input type="number" id="comp-ratio" value="15">
+                </div>
+                <div class="input-group">
+                    <label>HTC Reactor Pressure (bar)</label>
+                    <input type="number" id="htc-press" value="20">
+                </div>
+                <div class="input-group">
+                    <label>Biomass Flow (kg/s)</label>
+                    <input type="number" id="biomass-flow" value="10">
+                </div>
+                <button id="analyze-btn" class="primary-btn">ANALYZE CYCLE</button>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <header>
+                <h1>AD-HTC Fuel-Enhanced Gas Cycle Visualization</h1>
+                <p>Faculty of Engineering, University of Lagos</p>
+            </header>
+
+            <section class="top-row">
+                <div class="card schematic-card">
+                    <h3>Process Schematic</h3>
+                    <div class="schematic-placeholder" id="schematic-container">
+                        <!-- Image will be inserted here -->
+                        <img id="schematic-img" src="" alt="AD-HTC Schematic">
+                    </div>
+                </div>
+                <div class="card metrics-card">
+                    <h3>Real-time Metrics</h3>
+                    <div class="metrics-grid">
+                        <div class="metric">
+                            <span class="label">Thermal Efficiency</span>
+                            <span class="value" id="eta-val">--%</span>
+                        </div>
+                        <div class="metric">
+                            <span class="label">Net Power Output</span>
+                            <span class="value" id="power-val">-- MW</span>
+                        </div>
+                        <div class="metric">
+                            <span class="label">CO2 Reduction</span>
+                            <span class="value" id="co2-val">--%</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="charts-row">
+                <div class="card chart-card">
+                    <h3>h-s Chart (HTC Steam Cycle)</h3>
+                    <div id="hs-chart" class="chart"></div>
+                </div>
+                <div class="card chart-card">
+                    <h3>T-Ḣ Chart (Gas Cycle Processes)</h3>
+                    <div id="th-chart" class="chart"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
