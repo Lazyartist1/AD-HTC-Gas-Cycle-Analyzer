@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             y: data.charts.hs.h,
             mode: 'lines+markers',
             name: 'Steam Cycle',
-            line: { color: '#2563eb', width: 2 },
+            line: { color: '#2563eb', width: 2, shape: 'spline' },
             marker: { size: 6 }
         }];
         const hsLayout = {
@@ -82,14 +82,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 y: data.charts.th.gas_T,
                 mode: 'lines',
                 name: 'GT Exhaust',
-                line: { color: '#ef4444', width: 3 }
+                line: { color: '#ef4444', width: 3, shape: 'spline' }
             },
             {
                 x: data.charts.th.steam_H,
                 y: data.charts.th.steam_T,
                 mode: 'lines',
                 name: 'Water/Steam Path',
-                line: { color: '#3b82f6', width: 3 }
+                line: { color: '#3b82f6', width: 3, shape: 'spline' }
             }
         ];
         const thLayout = {
