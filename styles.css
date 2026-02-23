@@ -1,12 +1,13 @@
 :root {
-    --primary: #2563eb;
-    --primary-hover: #1d4ed8;
-    --bg-main: #f8fafc;
-    --bg-card: #ffffff;
-    --text-main: #1e293b;
-    --text-muted: #64748b;
-    --border: #e2e8f0;
-    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --primary: #3b82f6;
+    --primary-hover: #60a5fa;
+    --bg-main: #0b1120;
+    --bg-card: #1e293b;
+    --bg-sidebar: #0f172a;
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --border: #334155;
+    --shadow: 0 10px 15px -3px rgb(0 0 0 / 0.5);
 }
 
 * {
@@ -20,6 +21,10 @@ body {
     background-color: var(--bg-main);
     color: var(--text-main);
     line-height: 1.5;
+}
+
+html {
+    background-color: var(--bg-main);
 }
 
 .app-container {
@@ -108,6 +113,7 @@ body {
     flex: 1;
     padding: 2.5rem;
     overflow-y: auto;
+    background-color: var(--bg-main);
 }
 
 header {
@@ -147,7 +153,7 @@ header p {
 
 .schematic-placeholder {
     height: 300px;
-    background-color: #f1f5f9;
+    background-color: var(--bg-main);
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -155,11 +161,7 @@ header p {
     overflow: hidden;
 }
 
-.schematic-placeholder img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
+
 
 .metrics-grid {
     display: flex;
@@ -189,4 +191,104 @@ header p {
 .chart {
     height: 450px;
     width: 100%;
+}
+
+/* Schematic SVG Styling */
+.schematic-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.2));
+}
+
+.svg-bg {
+    fill: transparent;
+}
+
+.component-box {
+    fill: #0f172a;
+    stroke: var(--primary);
+    stroke-width: 1.5;
+    rx: 4;
+}
+
+.component-title {
+    fill: #f1f5f9;
+    font-size: 11px;
+    font-weight: 400;
+    text-anchor: middle;
+}
+
+.biomass-path {
+    stroke: #10b981;
+    stroke-width: 2;
+    fill: none;
+}
+
+.steam-path {
+    stroke: #3b82f6;
+    stroke-width: 2;
+    fill: none;
+}
+
+.biogas-path {
+    stroke: #f59e0b;
+    stroke-width: 2;
+    fill: none;
+}
+
+.combustion-path {
+    stroke: #ef4444;
+    stroke-width: 2;
+    fill: none;
+}
+
+.shaft-line {
+    stroke: #64748b;
+    stroke-width: 2;
+    stroke-dasharray: 8 4;
+}
+
+.component-rect {
+    fill: #1e293b;
+    stroke: var(--border);
+    stroke-width: 1;
+}
+
+.component-text {
+    fill: #f1f5f9;
+    font-size: 11px;
+    text-anchor: middle;
+}
+
+.sub-text {
+    fill: #94a3b8;
+    font-size: 9px;
+    text-anchor: middle;
+}
+
+/* Animations */
+.flow-marker {
+    filter: blur(1px);
+}
+
+.animate-slow {
+    animation: flow 6s linear infinite;
+}
+
+.animate-med {
+    animation: flow 4s linear infinite;
+}
+
+.animate-fast {
+    animation: flow 2.5s linear infinite;
+}
+
+@keyframes flow {
+    from {
+        offset-distance: 0%;
+    }
+
+    to {
+        offset-distance: 100%;
+    }
 }

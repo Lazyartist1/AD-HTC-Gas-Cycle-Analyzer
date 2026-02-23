@@ -41,23 +41,26 @@
         <main class="content">
             <header>
                 <h1>AD-HTC Fuel-Enhanced Gas Cycle Visualization</h1>
-
             </header>
 
             <section class="top-row">
                 <div class="card schematic-card">
                     <h3>Process Schematic</h3>
                     <div class="schematic-placeholder" id="schematic-container">
-                        <!-- Image will be inserted here -->
-                        <img id="schematic-img" src="schematic.png" alt="AD-HTC Schematic">
+                        <img id="schematic-img" src="schematic_v2.png" alt="Process Schematic"
+                            style="max-width: 100%; max-height: 100%; border-radius: 8px;">
                     </div>
                 </div>
                 <div class="card metrics-card">
                     <h3>Real-time Metrics</h3>
                     <div class="metrics-grid">
                         <div class="metric">
-                            <span class="label">Thermal Efficiency</span>
-                            <span class="value" id="eta-val">--%</span>
+                            <span class="label">Gas Efficiency</span>
+                            <span class="value" id="eta-gas-val">--%</span>
+                        </div>
+                        <div class="metric">
+                            <span class="label">Steam Efficiency</span>
+                            <span class="value" id="eta-steam-val">--%</span>
                         </div>
                         <div class="metric">
                             <span class="label">Net Power Output</span>
@@ -84,6 +87,7 @@
         </main>
     </div>
 
+    <script src="script.js"></script>
 </body>
 
 </html>

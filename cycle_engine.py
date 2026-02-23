@@ -60,12 +60,16 @@ class CycleEngine:
         # 5. Combined Metrics
         total_power = power_gt + power_st
         total_efficiency = total_power * 1000 / heat_input
+        eff_gas = power_gt * 1000 / heat_input
+        eff_steam = power_st * 1000 / heat_input
         co2_reduction = 15 + (biomass_flow_kgs * 0.8) # Arbitrary based on carbon sequestration in hydrochar
 
         # Visualization Data
         return {
             "metrics": {
-                "efficiency": total_efficiency, # 0-1 scale
+                "efficiency": total_efficiency,
+                "efficiency_gas": eff_gas,
+                "efficiency_steam": eff_steam,
                 "power": total_power,
                 "co2": co2_reduction
             },
