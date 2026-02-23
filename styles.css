@@ -204,8 +204,9 @@ header p {
 }
 
 .schematic-placeholder {
-    height: 300px;
-    background-color: var(--bg-main);
+    height: 450px;
+    /* Increased height to match charts and fit square aspect ratio */
+    width: 100%;
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -249,102 +250,17 @@ header p {
     width: 100%;
 }
 
-/* Schematic SVG Styling */
-.schematic-svg {
+/* Schematic Settings */
+.schematic-pro {
     width: 100%;
     height: 100%;
-    filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.2));
+    object-fit: contain;
+    /* Native #1e293b background matches card exactly */
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    /* Removed CSS filters for maximum image sharpness */
 }
 
-.svg-bg {
-    fill: transparent;
-}
-
-.component-box {
-    fill: #0f172a;
-    stroke: var(--primary);
-    stroke-width: 1.5;
-    rx: 4;
-}
-
-.component-title {
-    fill: #f1f5f9;
-    font-size: 11px;
-    font-weight: 400;
-    text-anchor: middle;
-}
-
-.biomass-path {
-    stroke: #10b981;
-    stroke-width: 2;
-    fill: none;
-}
-
-.steam-path {
-    stroke: #3b82f6;
-    stroke-width: 2;
-    fill: none;
-}
-
-.biogas-path {
-    stroke: #f59e0b;
-    stroke-width: 2;
-    fill: none;
-}
-
-.combustion-path {
-    stroke: #ef4444;
-    stroke-width: 2;
-    fill: none;
-}
-
-.shaft-line {
-    stroke: #64748b;
-    stroke-width: 2;
-    stroke-dasharray: 8 4;
-}
-
-.component-rect {
-    fill: #1e293b;
-    stroke: var(--border);
-    stroke-width: 1;
-}
-
-.component-text {
-    fill: #f1f5f9;
-    font-size: 11px;
-    text-anchor: middle;
-}
-
-.sub-text {
-    fill: #94a3b8;
-    font-size: 9px;
-    text-anchor: middle;
-}
-
-/* Animations */
-.flow-marker {
-    filter: blur(1px);
-}
-
-.animate-slow {
-    animation: flow 6s linear infinite;
-}
-
-.animate-med {
-    animation: flow 4s linear infinite;
-}
-
-.animate-fast {
-    animation: flow 2.5s linear infinite;
-}
-
-@keyframes flow {
-    from {
-        offset-distance: 0%;
-    }
-
-    to {
-        offset-distance: 100%;
-    }
+.card:hover .schematic-pro {
+    transform: scale(1.02);
 }
