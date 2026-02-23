@@ -28,4 +28,4 @@ Features
 * structure
 - `cycle_engine.py`: Core thermodynamic logic.
 - `main.py`: FastAPI server and request routing.
-- `index.html`, `styles.css`, `script.py`: Frontend implementation.
+- `index.html`, `styles.css`, `script.js`: Frontend implementation.
